@@ -19,7 +19,7 @@ public class Ejercicio2 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             String ruta;
-            File archivo = null;
+            File archivo = null
             
 
             FileWriter archivo = null;
