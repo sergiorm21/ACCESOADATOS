@@ -8,9 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Ejercicio2 {
+    
+    static Scanner sc = new Scanner(System.in);
+    static RandomAccessFile archivo = null;
 
     public static void main(String[] args) {
 
@@ -19,10 +23,10 @@ public class Ejercicio2 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             String ruta;
-            File archivo = null
+            File fichero = null;
             
 
-            FileWriter archivo = null;
+            FileWriter fichero = null;
             PrintWriter pw = null;
 
             System.out.println("Bienvenido, selecciona lo que quieres hacer.");
@@ -37,10 +41,10 @@ public class Ejercicio2 {
             switch (opcion) {
                 case 1:
                     ruta = "C:\\Users\\reina.moser\\Documents\\NetBeansProjects\\AccesoADatos\\src\\UDActividad5\\SergioReinaExtra1.txt";
-                    archivo = new File(ruta);
+                    fichero = new File(ruta);
 
-                    if (!archivo.exists()) {
-                        archivo.createNewFile();
+                    if (!fichero.exists()) {
+                        fichero.createNewFile();
                     } else {
                         System.out.println("No se puede crear porque ya existe.");
                     }
@@ -48,12 +52,12 @@ public class Ejercicio2 {
                 case 2:
                     try {
                     ruta = "C:\\Users\\reina.moser\\Documents\\NetBeansProjects\\AccesoADatos\\src\\UDActividad5\\SergioReinaExtra1.txt";
-                    archivo = new File(ruta);
+                    fichero = new File(ruta);
 
-                    if (!archivo.exists()) {
+                    if (!fichero.exists()) {
                         System.out.println("El archivo ya existe");
                     } else {
-                        FileReader fr = new FileReader(archivo);
+                        FileReader fr = new FileReader(fichero);
                         br = new BufferedReader(fr);
 
                         String linea = br.readLine();
@@ -71,10 +75,10 @@ public class Ejercicio2 {
                 case 3:
                     try {
                     ruta = "C:\\Users\\reina.moser\\Documents\\NetBeansProjects\\AccesoADatos\\src\\UDActividad5\\SergioReinaExtra1.txt";
-                    archivo = new FileWriter(ruta);
-                    Printwriter pw = new Printwriter(archivo);
+                    fichero = new FileWriter(ruta);
+                    Printwriter pw = new Printwriter(fichero);
 
-                    if (!archivo.exists()) {
+                    if (!fichero.exists()) {
                         System.out.println("El archivo ya existe.");
                     } else {
                         for (int i = 0; i < 10 , i++) {
